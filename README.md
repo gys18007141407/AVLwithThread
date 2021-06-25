@@ -2,6 +2,7 @@
 
 
 CLAVLTree is a balanced tree which the height of left substree and right substree is different no more than 1.
+	
 Besides, in my CLAVLTree, there are flags to find prior node and posterior node much more faster.
 when flag lIsNode set to be true, then its left pointer is its left child. Otherwise, its left pointer is its prior node.
 when flag rIsNode set to be true, then its right pointer is its right child. Otherwise, its right pointer is its posterior node.
