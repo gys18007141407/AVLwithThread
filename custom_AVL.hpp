@@ -352,7 +352,8 @@ inline void CLAVLTree<_Tp, _Alloc>::LL(TreeNode** __root){
     }
     else{
         if((*__root)->left->bf == 1) (*__root)->bf = (*__root)->left->bf = -1;
-        else (*__root)->bf = 0, (*__root)->left->bf = -2;
+        else if((*__root)->left->bf == -1) (*__root)->bf = 0, (*__root)->left->bf = -2;
+        else (*__root)->bf = 0, (*__root)->right->bf = -1;
     }
 
     if(newRoot->rIsNode){
@@ -383,8 +384,9 @@ inline void CLAVLTree<_Tp, _Alloc>::RR(TreeNode** __root){
 
     if((*__root)->bf == -2){
 
-        if((*__root)->right->bf != -2) (*__root)->bf = (*__root)->right->bf = 0;
-        else (*__root)->bf = 1, (*__root)->right->bf = 0;
+        if((*__root)->right->bf == -1) (*__root)->bf = (*__root)->right->bf = 0;
+        else if((*__root)->right->bf == 1) (*__root)->bf = 1, (*__root)->right->bf = 0;
+        else (*__root)->bf = 0, (*__root)->right->bf = -1;
 
     }else{
 
