@@ -8,7 +8,7 @@ when flag rIsNode set to be true, then its right pointer is its right child. Oth
 so all the nullptr pointer in previous tree are used to act as a thread to get its prior node or posterior node.
 
 ---
-In my test, CAVLTree is faster than std::set and std::mutiset which use rb_tree in several operations by default
+In my test, CLAVLTree is faster than std::set and std::mutiset which use rb_tree in several operations by default
 
 if compile with -O3, then CLAVLTree is faster than std::set and std::multise in insertion, search and count. But spend more time in delete operation.
 Because CLAVLTree is strictly balanced, so in delete operation there will be more rotate than rb-tree.
